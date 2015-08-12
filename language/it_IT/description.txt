@@ -1,0 +1,1 @@
+Permette di visualizzare le immagini su una mappa Google Maps e/o Google Earth

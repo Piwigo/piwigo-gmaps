@@ -1,0 +1,163 @@
+
+HTML, BODY {
+	height: 100%;
+	max-height: 100%;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+HTML {
+/* hide overflow:hidden from IE5/Mac */
+	overflow: hidden; /*get rid of scroll bars in IE */
+	/* */
+}
+
+BODY {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+
+#titlebar {
+	width: 100%;
+	min-height: 18px;
+}
+
+
+#map {
+	overflow: auto;
+	position: absolute;
+	left: 0; width: 100%;
+	top: 18px; bottom: 0;
+}
+
+
+
+
+#titlebar .titlebar_links {
+	float: right;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+#titlebar .titlebar_title {
+  margin-left: 5px;
+}
+
+#titlebar .titlebar_title A {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+#q {
+  border: 1px solid gray;
+  font-size:80%;
+  color: #404040;
+  background-color: #dddddd;
+}
+
+
+#q:focus {
+  color: black;
+  background-color: #ffffff;
+}
+
+#titlebar .titlebar_links A {
+  border: none;
+  text-decoration: none;
+}
+
+#titlebar .titlebar_links A SPAN {
+  text-decoration: underline;
+}
+
+#titlebar IMG {
+  border: none;
+  vertical-align: bottom;
+}
+
+
+#titlebar #dataLoadStatus {
+	font-weight: bold;
+}
+
+
+/* Info Window Structure is
+DIV.gmiw_header
+  SPAN#pwgImageCounters
+  A#gotoPrevImage
+  A#gotoNextImage
+  A#pwgImageBlowup
+DIV#pwgImageDetail
+  DIV.gmiw_imageTitle
+  DIV.gmiw_imageContent
+    DIV.gmiw_imageWrap
+      A IMG
+    DIV.gmiw_imageComment
+*/
+
+.gmiw_header A {
+	margin-left: 5px;
+	border: none;
+	text-decoration: none;
+}
+
+.gmiw_header IMG { vertical-align: bottom; }
+
+.gmiw_header A SPAN { text-decoration: underline; }
+
+.gmiw_header A#pwgImageBlowup {
+	margin-left: 15px;
+	font-weight: bold;
+}
+
+.gmiw_imageTitle {
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.gmiw_imageContent {
+	min-width: 325px;
+	width: 325px;
+	min-height: 168px;
+	height: 168px;
+	overflow-y: auto;
+}
+
+.gmiw_imageWrap {
+	margin: 0 5px -3px 0; /* - for bottom something wrong with Geko and Opera ignored by IE6*/
+	float:left;
+	display:inline;
+}
+
+.gmiw_imageWrap A IMG { border-width: 1px; }
+
+.gmiw_imageComment {  display:inline; }
+
+
+/*google autocomplete dropdown*/
+.pac-container {
+	min-width: 250px;
+}
+
+@media (max-width:640px){
+	.hideable {
+		display:none;
+	}
+}
+
+@media (max-width:360px){
+	#titlebar .titlebar_links {
+		margin: 0;
+	}
+
+	.gmiw_imageContent {
+		min-width: 280px;
+		width: 280px;
+	}
+
+	#q {
+		max-width: 100px;
+	}
+}
