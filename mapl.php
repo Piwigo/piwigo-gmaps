@@ -147,6 +147,9 @@ $page['items'] = array_slice(
   $page['nb_image_page']
   );
 
+$page['items'] = trigger_change('loc_index_thumbnails_selection', $page['items']);
+
+
 $pictures = array();
 if (count($page['items']) > 0)
 {
@@ -190,9 +193,10 @@ foreach ($pictures as $img)
     ) );
 }
 $template->assign( array(
-  'derivative_params' => trigger_change('get_index_derivative_params', ImageStdParams::get_by_type( pwg_get_session_var('index_deriv', IMG_THUMB) ) ),
-  'SHOW_THUMBNAIL_CAPTION' => false,
+	'derivative_params' => trigger_change('get_index_derivative_params', ImageStdParams::get_by_type( pwg_get_session_var('index_deriv', IMG_THUMB) ) ),
+	'SHOW_THUMBNAIL_CAPTION' => false,
 	'thumbnails' => $tpl_thumbnails_var,
+	'VERY_SIMPLE' => 'smartpocket' === $theme
     ) );
 $template->set_filename('index_thumbnails', 'thumbnails.tpl');
 $template->assign_var_from_handle('THUMBNAILS', 'index_thumbnails');

@@ -10,6 +10,7 @@
 {/html_style}
 
 <div id="content" class="content">
+{if !$VERY_SIMPLE}
 	<div class="titrePage">
 		<ul class="categoryActions">
 			<li><a href="{$U_KML}" title="{$KML_LINK_TITLE}" class="pwg-state-default pwg-button" rel="nofollow" type="application/vnd.google-earth.kml+xml">
@@ -48,6 +49,8 @@
 {/if}
 
 {if !empty($navbar)}{include file='navigation_bar.tpl' assign='NAVBAR'}{$NAVBAR}{/if}
+
+{/if}
 
 {if !empty($THUMBNAILS)}
 <ul class="thumbnails" id="thumbnails">
