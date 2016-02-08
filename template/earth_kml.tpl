@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="{$CONTENT_ENCODING}"?>
+{'<'|sprintf}?xml version="1.0" encoding="{$CONTENT_ENCODING}"?>
 <kml xmlns="http://www.opengis.net/kml/2.2">
 <Document>
 	<Style id="img_normal">

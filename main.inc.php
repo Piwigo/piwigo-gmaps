@@ -1,6 +1,6 @@
 <?php /*
 Plugin Name: RV Maps&Earth
-Version: 2.7.b
+Version: 2.7.c
 Description: Extend your gallery with Google Maps and Google Earth ...
 Plugin URI: http://piwigo.org/ext/extension_view.php?eid=122
 Author: rvelices

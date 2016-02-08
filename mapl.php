@@ -170,6 +170,8 @@ SELECT *
   unset($rank_of);
 }
 
+$tpl_thumbnails_var = null;
+
 foreach ($pictures as $img)
 {
   $page_url = duplicate_picture_url(
