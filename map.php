@@ -66,6 +66,7 @@ $template->set_filename( 'map', dirname(__FILE__).'/template/map.tpl' );
 
 $template->assign(
   array(
+		'GMAPS_API_KEY' => !empty($conf['gmaps_api_key']) ? $conf['gmaps_api_key'] : '',
     'CONTENT_ENCODING' => get_pwg_charset(),
     'RVM_PLUGIN_VERSION' => RVM_PLUGIN_VERSION,
     'PLUGIN_ROOT_URL' => get_absolute_root_url().'plugins/'.$rvm_dir,

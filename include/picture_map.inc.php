@@ -29,10 +29,11 @@ add_event_handler( 'loc_end_picture', 'rvm_end_picture' );
 function rvm_picture_map_content($content, $picture)
 {
   include_once( dirname(__FILE__) .'/functions_map.php');
-  global $template;
+  global $template, $conf;
   $template->set_filename( 'map_content', dirname(__FILE__).'/../template/picture_map_content.tpl' );
   $template->assign(
     array(
+			'GMAPS_API_KEY' => !empty($conf['gmaps_api_key']) ? $conf['gmaps_api_key'] : '',
 			'MAP_TYPE' => rvm_get_config_var('map_type', 'ROADMAP'),
       'U_NO_MAP' => duplicate_picture_url(),
       'U_BLOWUP' => rvm_make_blowup_url( array('ll'=> array('lat'=>$picture['latitude'],'lon'=>$picture['longitude'])), array('start','box') ),

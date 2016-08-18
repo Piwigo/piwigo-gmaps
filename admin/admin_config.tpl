@@ -6,14 +6,14 @@ You have {$NB_GEOTAGGED} geotagged images.
 	<legend>Map configuration</legend>
 	<ul>
 
-	<!--<li>
+	<li>
 	 <label>
 		Google Maps API Key:
 		<input type="text" size="48" name="gmaps_api_key" value="{$GMAPS_API_KEY}" />
 	</label>
 		<br/>Signup for the key here: <a href="http://www.google.com/apis/maps/signup.html" target="_blank">http://www.google.com/apis/maps/signup.html</a>.
 	</li>
-	<br/> -->
+	<br/>
 
 	<!--<li>
 	 <label>

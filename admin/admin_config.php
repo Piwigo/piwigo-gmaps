@@ -5,17 +5,10 @@ include_once( dirname(__FILE__).'/../include/functions_map.php' );
 
 if ( isset($_POST['submit']) )
 {
-  if (isset($_POST['gmaps_api_key']))
-  {
-    $query = '
-UPDATE '.CONFIG_TABLE.'
-  SET value="'.$_POST['gmaps_api_key'].'"
-  WHERE param="gmaps_api_key"
-  LIMIT 1';
-    pwg_query($query);
-    list($conf['gmaps_api_key']) = array_from_query('SELECT value FROM '.CONFIG_TABLE.' WHERE param="gmaps_api_key"', 'value');
-  }
-
+  if (!empty($_POST['gmaps_api_key']))
+		conf_update_param('gmaps_api_key', $_POST['gmaps_api_key'], true);
+	else
+		conf_delete_param('gmaps_api_key');
   $gm_config = rvm_get_config();
 
   $n  = intval($_POST['nb_markers']);
@@ -45,7 +38,7 @@ list($nb_geotagged) = pwg_db_fetch_array( pwg_query($query) );
 $template->assign(
     array(
       'NB_GEOTAGGED' => $nb_geotagged,
-      'GMAPS_API_KEY' => $conf['gmaps_api_key'],
+      'GMAPS_API_KEY' => !empty($conf['gmaps_api_key']) ? $conf['gmaps_api_key'] : '',
       'NB_MARKERS' => rvm_get_config_var('nb_markers',40),
       'NB_IMAGES_PER_MARKER' => rvm_get_config_var('nb_images_per_marker',20),
 			'MAP_TYPE' => rvm_get_config_var('map_type','ROADMAP'),

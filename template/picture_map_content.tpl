@@ -1,5 +1,5 @@
 {html_head}
-<script src="//maps.googleapis.com/maps/api/js?sensor=false&amp;language={$lang_info.code}" type="text/javascript"></script>
+<script src="//maps.googleapis.com/maps/api/js?sensor=false&amp;language={$lang_info.code}{if !empty($GMAPS_API_KEY)}&amp;key={$GMAPS_API_KEY}{/if}" type="text/javascript"></script>
 {combine_script id='jquery' load='header' path='themes/default/js/jquery.min.js'}
 {combine_script id='jquery.colorbox' load='async' require='jquery' path='themes/default/js/plugins/jquery.colorbox.min.js'}
 {combine_css path='themes/default/js/plugins/colorbox/style2/colorbox.css'}
