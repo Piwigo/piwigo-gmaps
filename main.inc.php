@@ -1,12 +1,12 @@
 <?php /*
 Plugin Name: RV Maps&Earth
-Version: 2.9.a
+Version: 2.10.a
 Description: Extend your gallery with Google Maps and Google Earth ...
 Plugin URI: http://piwigo.org/ext/extension_view.php?eid=122
 Author: rvelices
 Author URI: http://www.modusoptimus.com/
 */
-define( 'RVM_PLUGIN_VERSION', '2.9.a');
+define( 'RVM_PLUGIN_VERSION', '2.10.a');
 defined('PHPWG_ROOT_PATH') or die('Hacking attempt!');
 
 add_event_handler('loc_end_index', 'rvm_end_index' );

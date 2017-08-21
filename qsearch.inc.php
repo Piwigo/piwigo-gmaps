@@ -16,10 +16,10 @@ LAT_PATT.'\\s*,\\s*'.LON_PATT.'\\s*'.RAD_PATT
 
 class QNearScope extends QSearchScope
 {
-  function __construct($id, $aliases, $nullable=false)
-  {
-    parent::__construct($id, $aliases, $nullable, true);
-  }
+	function __construct($id, $aliases, $nullable=false)
+	{
+		parent::__construct($id, $aliases, $nullable, true);
+	}
 
 	static function tollr($matches)
 	{
@@ -59,8 +59,8 @@ class QNearScope extends QSearchScope
 		return $ret;
 	}
 
-  function parse($token)
-  {
+	function parse($token)
+	{
 		$pat = '#'.POS_PATT.'#i';
 		if (preg_match($pat, $token->term, $matches))
 		{
@@ -70,19 +70,19 @@ class QNearScope extends QSearchScope
 				$r = @$ll['r'];
 				if (!$r) $r = 10000;
 
-  $cos_lat = max( 1e-2, cos($ll['lat']*M_PI/180) );
-  $dlat = $r/113000; // 1 degree is approx between 111 and 116 km
-  $dlon = min( $r/(113000*$cos_lat), 180 );
-  $bounds = array(
-      's' => $ll['lat'] - $dlat,
-      'w' => $ll['lon'] - $dlon,
-      'n' => $ll['lat'] + $dlat,
-      'e' => $ll['lon'] + $dlon,
-    );
-  if ($bounds['s']<-90) $bounds['s']=-90;
-  if ($bounds['w']<-180) $bounds['w']+=360;
-  if ($bounds['n']>90) $bounds['n']=90;
-  if ($bounds['e']>180) $bounds['e']-=360;
+				$cos_lat = max( 1e-2, cos($ll['lat']*M_PI/180) );
+				$dlat = $r/113000; // 1 degree is approx between 111 and 116 km
+				$dlon = min( $r/(113000*$cos_lat), 180 );
+				$bounds = array(
+					's' => $ll['lat'] - $dlat,
+					'w' => $ll['lon'] - $dlon,
+					'n' => $ll['lat'] + $dlat,
+					'e' => $ll['lon'] + $dlon,
+					);
+				if ($bounds['s']<-90) $bounds['s']=-90;
+				if ($bounds['w']<-180) $bounds['w']+=360;
+				if ($bounds['n']>90) $bounds['n']=90;
+				if ($bounds['e']>180) $bounds['e']-=360;
 
 				$token->scope_data = $bounds;
 				return true;
@@ -90,7 +90,7 @@ class QNearScope extends QSearchScope
 		}
 		elseif (strlen($token->term) > 2)
 		{
-			$key = 'geo_'.urlencode(transliterate($token->term));
+			$key = 'geo_'.urlencode(pwg_transliterate($token->term));
 			global $persistent_cache;
 			if (!$persistent_cache->get($key, $geo))
 			{
@@ -109,12 +109,12 @@ class QNearScope extends QSearchScope
 
 			if (count(@$geo['results'])) {
 					$gb = $geo['results'][0]['geometry']['viewport'];
-  				$bounds = array(
-      			's' => $gb['southwest']['lat'],
-      			'w' => $gb['southwest']['lng'],
-      			'n' => $gb['northeast']['lat'],
-      			'e' => $gb['northeast']['lng'],
-    			);
+				$bounds = array(
+				's' => $gb['southwest']['lat'],
+				'w' => $gb['southwest']['lng'],
+				'n' => $gb['northeast']['lat'],
+				'e' => $gb['northeast']['lng'],
+				);
 					$add = @$geo['results'][0]['formatted_address'];
 					if (strlen($add))
 					{
@@ -129,7 +129,7 @@ class QNearScope extends QSearchScope
 			}
 
 		}
-    return false;
+	return false;
   }
 }
 
