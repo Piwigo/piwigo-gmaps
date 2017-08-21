@@ -7,7 +7,7 @@
 <title>{$GALLERY_TITLE}</title>
 
 <script src="//maps.googleapis.com/maps/api/js?sensor=false&amp;language={$lang_info.code}&amp;libraries=places{if !empty($GMAPS_API_KEY)}&amp;key={$GMAPS_API_KEY}{/if}" type="text/javascript"></script>
-{combine_script id='jquery' load='header' path='//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'}
+{combine_script id='jquery' load='header' path='//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js'}
 {combine_script id='jquery.colorbox' load='async' require='jquery' path='themes/default/js/plugins/jquery.colorbox.min.js'}
 {combine_css path="`$PLUGIN_LOCATION`/template/style.css" version=$RVM_PLUGIN_VERSION}
 {combine_css path='themes/default/js/plugins/colorbox/style2/colorbox.css'}
