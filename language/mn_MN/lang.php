@@ -30,7 +30,7 @@ $lang['out of %d'] = 'нийт %d зураг';
 $lang['displays all photos on a map'] = 'бүх зургийг газрын зураг дээр харуулна';
 $lang['Geotagged'] = 'Газрын зураг дээр тэмдэглэсэн';
 $lang['opens %s in Google Earth'] = '%s-г Google Earth программ (компьютер дээр чинь суусан байх ёстой) дээр нээх';
-$lang['go to %s'] = '%s уруу буцах';
+$lang['go to %s'] = '%s цомог уруу буцах';
 $lang['Link to this page'] = 'Энэ хуудсийг холбох';
 $lang['Loading'] = 'Ачаалж байна';
 $lang['Latitude'] = 'Өргөрөг';
@@ -42,4 +42,3 @@ $lang['show all photos around this location'] = 'энэ хэсгийн бүх з
 $lang['Show all'] = 'Бүгдийг харуулах';
 $lang['Viewing'] = 'Галерей';
 $lang['World map'] = 'Газрын зураг';
-?>
