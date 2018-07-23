@@ -372,7 +372,7 @@ function rvm_build_section_items($img_fields, $where_sql, $mode, $order_by=null)
   GROUP BY i.id';
       break;
     case RVM_BUILD_HASH:
-      $func = create_function( '$q', 'return hash_from_query($q, "id");' );
+      $func = function($q) { return hash_from_query($q, "id"); };
       $group_by = '
   GROUP BY i.id';
       break;
