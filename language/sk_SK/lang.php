@@ -4,7 +4,7 @@ $lang['Map']='Mapa';
 $lang['displays %s on a map']='zobrazí %s na mape';
 $lang['opens %s in Google Earth']='otvorí %s v aplikácii Google Earth (musíte ju mať nainštalovanú v počítači)';
 
-$lang['Go to']='Choď na';
+$lang['Go to'] = 'Prejsť na';
 
 $lang['go to %s']='choď na %s';
 $lang['Viewing']='Prehliadanie';
@@ -27,4 +27,3 @@ $lang['Not geotagged'] = 'Bez geografického označenia';
 $lang['Longitude'] = 'Zemepisná dĺžka';
 $lang['Latitude'] = 'Zemepisná šírka';
 $lang['World map'] = 'Mapa sveta';
-?>
