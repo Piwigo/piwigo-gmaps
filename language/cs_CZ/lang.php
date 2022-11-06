@@ -26,4 +26,4 @@ $lang['Geotagged'] = 'Označeno geotagem';
 $lang['Not geotagged'] = 'Neoznačeno geotagem';
 $lang['Latitude'] = 'Zeměpisná šířka';
 $lang['Longitude'] = 'Zeměpisná délka';
-?>
+$lang['World map'] = 'Mapa světa';
